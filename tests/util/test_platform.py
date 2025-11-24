@@ -39,7 +39,7 @@ class PlatformUtilTest(unittest.TestCase):
         ("unmapped", "os2", ["!os2"], False),
         ("unmapped", "sunos5", ["linux", "freebsd", "sunos"], True),
         ("unmapped", "sunos5", ["!sunos", "!os2"], False),
-        # both black and white listing at the same time usually doesn't
+        # both blocklisting and allowlisting at the same time usually doesn't
         # make a whole lot of sense, but let's test it anyhow
         ("linux", "linux2", ["!windows", "linux", "freebsd"], True),
         ("linux", "linux2", ["!windows", "freebsd"], False),

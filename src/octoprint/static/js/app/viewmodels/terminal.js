@@ -432,10 +432,10 @@ $(function () {
                     self.blacklist.indexOf(mainCode) < 0 &&
                     self.blacklist.indexOf(fullCode) < 0
                 ) {
-                    // full or main code not on blacklist -> upper case the whole command
+                    // full or main code not on blocklist -> upper case the whole command
                     commandToSend = commandToSend.toUpperCase();
                 } else {
-                    // full or main code on blacklist -> only upper case that and leave parameters as is
+                    // full or main code on blocklist -> only upper case that and leave parameters as is
                     commandToSend =
                         fullCode + (commandMatch[4] !== undefined ? commandMatch[4] : "");
                 }

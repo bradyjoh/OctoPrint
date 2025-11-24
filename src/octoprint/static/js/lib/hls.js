@@ -14669,7 +14669,7 @@ var audio_track_controller_AudioTrackController = /*#__PURE__*/function (_TaskLo
     _this.tracks = [];
     /**
      * @public
-     * List of blacklisted audio track IDs (that have caused failure)
+     * List of blocklisted audio track IDs (that have caused failure)
      * @member {number[]}
      */
 
@@ -15004,7 +15004,7 @@ var audio_track_controller_AudioTrackController = /*#__PURE__*/function (_TaskLo
   ;
 
   _proto._handleLoadError = function _handleLoadError() {
-    // First, let's black list current track id
+    // First, let's blocklist current track id
     this.trackIdBlacklist[this._trackId] = true; // Let's try to fall back on a functional audio-track with the same group ID
 
     var previousId = this._trackId;
@@ -15012,8 +15012,8 @@ var audio_track_controller_AudioTrackController = /*#__PURE__*/function (_TaskLo
         name = _this$tracks$previous.name,
         language = _this$tracks$previous.language,
         groupId = _this$tracks$previous.groupId;
-    logger["logger"].warn("Loading failed on audio track id: " + previousId + ", group-id: " + groupId + ", name/language: \"" + name + "\" / \"" + language + "\""); // Find a non-blacklisted track ID with the same NAME
-    // At least a track that is not blacklisted, thus on another group-ID.
+    logger["logger"].warn("Loading failed on audio track id: " + previousId + ", group-id: " + groupId + ", name/language: \"" + name + "\" / \"" + language + "\""); // Find a non-blocklisted track ID with the same NAME
+    // At least a track that is not blocklisted, thus on another group-ID.
 
     var newId = previousId;
 

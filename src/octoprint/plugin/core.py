@@ -334,7 +334,7 @@ class PluginInfo:
     Arguments:
         key (str): Identifier of the plugin
         location (str): Installation folder of the plugin
-        instance (module): Plugin module instance - this may be ``None`` if the plugin has been blacklisted!
+        instance (module): Plugin module instance - this may be ``None`` if the plugin has been blocklisted!
         name (str): Human readable name of the plugin
         version (str): Version of the plugin
         description (str): Description of the plugin
@@ -370,10 +370,10 @@ class PluginInfo:
         """Whether the plugin is enabled."""
 
         self.blacklisted = False
-        """Whether the plugin is blacklisted."""
+        """Whether the plugin is blocklisted."""
 
         self.forced_disabled = False
-        """Whether the plugin has been force disabled by the system, e.g. due to safe mode blacklisting."""
+        """Whether the plugin has been force disabled by the system, e.g. due to safe mode blocklisting."""
 
         self.incompatible = False
         """Whether this plugin has been detected as incompatible."""
@@ -464,7 +464,7 @@ class PluginInfo:
 
         ``enabled_str``
             a 4-tuple, the first entry being the string to insert when the plugin is enabled, the second
-            entry the string to insert when it is not, the third entry the string when it is blacklisted
+            entry the string to insert when it is not, the third entry the string when it is blocklisted
             and the fourth when it is incompatible.
         ``bundled_str``
             a 2-tuple, the first entry being the string to insert when the plugin is bundled, the second
@@ -885,7 +885,7 @@ class PluginManager:
                     processed_blacklist.append((key, SpecifierSet(version)))
                 except Exception:
                     self.logger.warning(
-                        "Invalid version requirement {} for blacklist "
+                        "Invalid version requirement {} for blocklist "
                         "entry {}, ignoring".format(version, key)
                     )
             else:
@@ -1263,7 +1263,7 @@ class PluginManager:
             plugin.version is not None
             and self._is_plugin_version_blacklisted(key, plugin.version)
         ):
-            self.logger.warning(f"Plugin {plugin} is blacklisted.")
+            self.logger.warning(f"Plugin {plugin} is blocklisted.")
             plugin.blacklisted = True
 
         python_version = get_python_version_string()
@@ -1454,7 +1454,7 @@ class PluginManager:
                 ):
                     if plugin.blacklisted:
                         self.logger.warning(
-                            f"Plugin {plugin} is blacklisted. Not enabling it."
+                            f"Plugin {plugin} is blocklisted. Not enabling it."
                         )
                         continue
                     self.enable_plugin(
@@ -2073,7 +2073,7 @@ class PluginManager:
                 )
                 formatted_plugins += "\n"
 
-            legend = "Prefix legend: {1} = disabled, {2} = blacklisted, {3} = incompatible".format(
+            legend = "Prefix legend: {1} = disabled, {2} = blocklisted, {3} = incompatible".format(
                 *enabled_str
             )
 

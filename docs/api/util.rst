@@ -80,8 +80,8 @@ Various tests
          type not included in this list, the test will fail. E.g. ``["image/*", "text/plain"]``.
        * ``content_type_blacklist``: Optional array of unsupported content types. If set and the URL returns a content
          type included in this list, the test will fail. E.g. ``["video/*"]``. Can be used together with ``content_type_whitelist``
-         to further limit broader content type definition, e.g. by putting ``image/*`` into the whitelist, but disallowing
-         PNG by including ``image/png`` on the blacklist.
+         to further limit broader content type definition, e.g. by putting ``image/*`` into the allowlist, but disallowing
+         PNG by including ``image/png`` on the blocklist.
 
      The ``url`` command returns :http:statuscode:`200` with a :ref:`URL test result <sec-api-util-datamodel-urltestresult>`
      when the test could be performed. The status code of the response does NOT reflect the
