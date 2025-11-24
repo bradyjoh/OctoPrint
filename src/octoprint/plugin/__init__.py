@@ -75,7 +75,7 @@ def plugin_manager(
         plugin_sorting_order (dict): A dict containing a custom sorting orders for plugins. The keys are plugin identifiers,
             mapped to dictionaries containing the sorting contexts as key and the custom sorting value as value.
         plugin_blacklist (list): A list of plugin identifiers/identifier-requirement tuples
-            that are currently blacklisted.
+            that are currently blocklisted.
         plugin_restart_needing_hooks (list): A list of hook namespaces which cause a plugin to need a restart in order
             be enabled/disabled. Does not have to contain full hook identifiers, will be matched with startswith similar
             to logging handlers

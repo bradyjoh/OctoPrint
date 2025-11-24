@@ -241,7 +241,7 @@ def serialList():
                 )
             )
 
-    # blacklisted ports
+    # blocklisted ports
     blacklistedPorts = settings().get(["plugins", "serial_connector", "blacklistedPorts"])
     if blacklistedPorts:
         for pattern in blacklistedPorts:
@@ -275,7 +275,7 @@ def baudrateList(candidates=None):
                 f"{additional} is not a valid additional baudrate, ignoring it"
             )
 
-    # blacklisted baudrates
+    # blocklisted baudrates
     blacklistedBaudrates = settings().get(
         ["plugins", "serial_connector", "blacklistedBaudrates"]
     )

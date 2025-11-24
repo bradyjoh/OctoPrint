@@ -1266,9 +1266,9 @@
      * Check if the data type is TEXT or BINARY, using the following algorithm:
      * - TEXT if the two conditions below are satisfied:
      *    a) There are no non-portable control characters belonging to the
-     *       "black list" (0..6, 14..25, 28..31).
+     *       "blocklist" (0..6, 14..25, 28..31).
      *    b) There is at least one printable character belonging to the
-     *       "white list" (9 {TAB}, 10 {LF}, 13 {CR}, 32..255).
+     *       "allowlist" (9 {TAB}, 10 {LF}, 13 {CR}, 32..255).
      * - BINARY otherwise.
      * - The following partially-portable control characters form a
      *   "gray list" that is ignored in this detection algorithm:
